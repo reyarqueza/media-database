@@ -1,0 +1,27 @@
+erDiagram
+    users {
+        SERIAL id
+        VARCHAR username
+        TIMESTAMP created_at
+    }
+    media_types {
+        SERIAL id
+        media_type_enum name
+        TIMESTAMP created_at
+    }
+    medias {
+        SERIAL id
+        VARCHAR title
+        INTEGER media_type_id
+        TIMESTAMP created_at
+    }
+    users_medias {
+        INTEGER user_id
+        INTEGER media_id
+        TIMESTAMP added_at
+        %% Composite PK: (user_id, media_id)
+    }
+
+    users_medias }o--|| users : "user_id"
+    users_medias }o--|| medias : "media_id"
+    medias }o--|| media_types : "media_type_id"
