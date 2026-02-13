@@ -3,23 +3,26 @@ erDiagram
         SERIAL id
         VARCHAR username
         TIMESTAMP created_at
+        %% UNIQUE (username)
     }
     media_types {
         SERIAL id
-        media_type_enum name
+        VARCHAR name
         TIMESTAMP created_at
+        %% UNIQUE (name)
     }
     medias {
         SERIAL id
         VARCHAR title
         INTEGER media_type_id
         TIMESTAMP created_at
+        %% UNIQUE (title, media_type_id)
     }
     users_medias {
         INTEGER user_id
         INTEGER media_id
         TIMESTAMP added_at
-        %% Composite PK: (user_id, media_id)
+        %% PRIMARY KEY (user_id, media_id)
     }
 
     users_medias }o--|| users : "user_id"

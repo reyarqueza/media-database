@@ -4,15 +4,13 @@ BEGIN;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TYPE media_type_enum AS ENUM ('VHS', 'LaserDisc', 'DVD', 'Blu-ray', 'Ultra HD Blu-ray');
-
 CREATE TABLE media_types (
     id SERIAL PRIMARY KEY,
-    name media_type_enum NOT NULL,
+    name VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
