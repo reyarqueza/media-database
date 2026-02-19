@@ -26,16 +26,21 @@ Some medias are ficticious, as well as default users.
 ## Usage
 
 ### ddl
-Run the ddl.sql in your PostgreSQL. This creates the tables and its
-relationships to each other.
+> Run the **ddl.sql** in your PostgreSQL.
+
+This creates the tables and its relationships to each other.
 
 > Besides running locally, there are cloud PostgreSQL databases with free tiers,
 such as [Supabase](https://supabase.com/) or [Neon](https://neon.com/).
 
 ### dml
-Next, run each dml-*.sql file, however, <u>run</u> the **dml-users-medias.sql**
-file <u>last</u>.
+Run the dlm-*.sql files in the following order:
+
+> 1. Run **dml-media-types.sql**
+> 1. Run **dml-medias.sql**
+> 1. Run **dml-users.sql**
+> 1. Run **dml-users-medias.sql**
 
 ### dql
-Use the **dql-get-user-collection.sql** query as a template, swapping out actual values
-with variables in your desired stack.
+Use the **dql-get-user-collection.sql** query as a template, swapping out actual
+values with variables in your desired stack.
