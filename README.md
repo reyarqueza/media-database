@@ -44,3 +44,6 @@ Run the dlm-*.sql files in the following order:
 ### dql
 Use the **dql-get-user-collection.sql** query as a template, swapping out actual
 values with variables in your desired stack.
+
+## AI Generated Wiki
+https://deepwiki.com/reyarqueza/media-database
